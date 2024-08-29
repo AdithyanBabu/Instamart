@@ -1,34 +1,10 @@
-// const mongoClient=require('mongodb').MongoClient
-// const state={
-//     db:null
-// }
-
-// const uri = "mongodb+srv://adithyanbabu98:xqYIP4AEmF48N19q@cluster0.qhvzo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
-// module.exports.connect=function(done)
-// {
-//     const url='mongodb://localhost:27017'
-//     const dbname='cart'
-// //CONNECTION SCRIPT
-//     mongoClient.connect(url,(err,data)=>{
-//         if(err) return done(err)
-//         state.db=data.db(dbname)      
-//    })
-//    done()
-// }
-
-// module.exports.get=function(){
-//     return state.db
-// }
-
-
 const { MongoClient } = require('mongodb');
-
 const state = {
     db: null
 };
 
 const uri = "mongodb+srv://adithyanbabu98:xqYIP4AEmF48N19q@cluster0.qhvzo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// const uri='mongodb://localhost:27017'
 
 module.exports.connect = function(done) {
     const dbname = 'cart';

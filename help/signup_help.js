@@ -6,6 +6,7 @@ module.exports = {
     doSignup: (signupData) => {
         return new Promise(async (resolve, reject) => {
             if (signupData.Password==signupData.rePassword){
+                delete signupData.rePassword; 
                 signupData.Password = await bcrypt.hash(signupData.Password, 10)
                 db.get().collection(collection.SIGNUP).insertOne(signupData).then((data) => {
                     resolve({status:true})
